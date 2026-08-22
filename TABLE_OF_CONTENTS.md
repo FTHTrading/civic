@@ -1,91 +1,124 @@
-# 📑 MIA BY VIA — OPEN TRUST MIAMI (OTM)
-## Master Color-Coded Technical Architecture & System Index
+# 🎨 MIA BY VIA — MASTER COLOR-CODED TABLE OF CONTENTS & SYSTEM FLOW TREE
+## Institutional Architecture, 5 Controlled Planes, & 10 Aggregate State Machines
 
-> **Operator**: UnyKorn LLC · **Domain**: `mia.unykorn.ai` · **Codename**: OTM (Open Trust Miami)  
-> **Classification**: Municipal Verification & Self-Sovereign Identity Architecture  
-> **Primary Specs**: MIA by VIA Whitepaper (2026-08) & OPEN TRUST Civic Verification Stack
-
----
-
-### 🎨 Color-Coding Domain Legend
-
-| Color Badge | Color Hex | Architectural Domain | Core Components Covered |
-| :--- | :--- | :--- | :--- |
-| 🩵 **NEON CYAN** | `#00F2FE` | **L0–L1 Core Foundations** | W3C DIDs, SSI Engine, EIP-712 Cryptography, Micro-Services |
-| 🩷 **NEON FLAMINGO** | `#FF007A` | **G-Codes (Government Codes)** | Municipal Smart Contracts, Permit & License Issuers |
-| 💛 **SUNSET GOLD** | `#FFAB00` | **C-Nodes (Citizen Nodes)** | Resident Wallet, Soulbound VC NFTs, ZKP SNARK Proofs |
-| 💚 **PALM EMERALD** | `#10B981` | **The Three Pillars (IDs, Data, Dollars)** | Verifiable Credentials, Provenance Receipts, Multi-Asset Payments |
-| 💜 **BOUGAINVILLEA** | `#A835C4` | **Open Trust Stack (A1, A2, A3)** | Open Checkbook, Attestation Standard, Blocking Linter |
-| 🧡 **CORAL AMBER** | `#FF6A3D` | **ANVIL Gate Board (G0–G7)** | Exit Gates G0–G7 & Human Blocking Gates G-M01–G-M14 |
-| 🛡️ **BISCAYNE OCEAN** | `#060C1B` | **Legal Perimeter & Design Laws** | Design Laws 0–3, Zero PII Guard, Non-Affiliation Boundary |
+> **Platform**: MIA by VIA (Miami Municipal Operating System)  
+> **Repository**: [`FTHTrading/civic`](https://github.com/FTHTrading/civic)  
+> **Operator**: UnyKorn LLC (`unykorn.ai`) · **Domain**: `mia.unykorn.ai`  
+> **Licensing**: Dual-Licensed under Apache 2.0 & MIT License  
+> **Framework**: Process-G Stage-Gated Operational Control
 
 ---
 
-## 📚 Table of Contents Index
+## 🌳 SYSTEM ARCHITECTURE FLOW TREE
 
-### 🩵 Section 1: Executive Summary & Core Foundations (`#00F2FE`)
-- **1.1 Executive Overview**: Municipal platform for Miami-Dade County operating at `mia.unykorn.ai`.
-- **1.2 W3C Decentralized Identifiers (DIDs)**: Cryptographic identity anchors (`did:via:gcode:...` and `did:via:cnode:...`).
-- **1.3 Smart Contract Governance**: EVM-compatible automated service execution without municipal API lock-in.
-- **1.4 Self-Sovereign Identity (SSI)**: Resident-owned data sovereignty adhering to W3C VC & DID standards.
-
----
-
-### 🩷 Section 2: G-Codes (Government Codes) Directory (`#FF007A`)
-- **2.1 G-Code Definition**: Unique, immutable smart contracts assigned to every municipal application, registration, license, permit, ticket, and bill.
-- **2.2 Active Miami-Dade G-Code Endpoints**:
-  - 🏢 `did:via:gcode:permit-building-01` — Miami-Dade Building & Permitting Service
-  - 💼 `did:via:gcode:business-licensing-02` — Commercial & Occupational Licensing
-  - 🚆 `did:via:gcode:transit-publicworks-03` — Mobility & Public Works Transit Passes
-  - 💧 `did:via:gcode:water-sewer-04` — Water & Sewer Utility Attestations (WASD)
-  - 🌿 `did:via:gcode:biscayne-env-06` — Biscayne Bay Eco-Stewardship Rewards
-- **2.3 Technical Implementation**: Verifiable Credential issuers, EVM bytecodes, Secp256k1 public key allowlists.
-
----
-
-### 💛 Section 3: C-Nodes (Citizen Nodes) Wallet & ZKP Engine (`#FFAB00`)
-- **3.1 C-Node Definition**: Secure non-custodial digital wallet controlled by residents and enterprise entities.
-- **3.2 Verifiable Credentials & Soulbound NFTs**: Non-transferable digital credentials for resident status, permits, and commercial licenses.
-- **3.3 Zero-Knowledge Proof (ZKP) SNARK Engine**:
-  - 🛡️ **District 3 Residency Proof**: Groth16/BN254 SNARK proving District 3 residency without revealing home street address.
-  - 🔞 **Age 21+ Proof**: Proves age eligibility without revealing full Date of Birth.
-  - ☀️ **Solar Permit Status Proof**: Proves valid solar permit without disclosing parcel numbers.
-- **3.4 Multi-Asset Financial Balances**: Fiat USD (ACH/Wire), Stablecoin USDC, Transit Pass Passes, and MIA Civic Tokens.
-
----
-
-### 💚 Section 4: The Three Pillars — IDs, Data, and Dollars (`#10B981`)
-- **4.1 Pillar 1 — IDs (Identification)**:
-  - Unified digital identity replacing physical cards.
-  - Privacy-preserving selective disclosure and zero-knowledge verification.
-- **4.2 Pillar 2 — Data (Sovereignty & Audit)**:
-  - Cryptographic content-addressed transaction receipts (SHA-256).
-  - Primary instrument page-and-row locators for full transparency.
-- **4.3 Pillar 3 — Dollars (Financial Layer)**:
-  - Non-custodial civic payment rails with zero transaction fees.
-  - Smart contract transit pass clearance and civic recycling rewards.
+```text
+MIA by VIA (Municipal Trust Operating System)
+│
+├── 🟦 DOMAIN 1: CIVIC IDENTITY PLANE (COLOR: #00F2FE - ELECTRIC CYAN)
+│   ├── Citizen Nodes (Resident/Enterprise Non-Custodial Wallets)
+│   ├── W3C DID Registry & Key Lifecycle (Ed25519 / secp256k1)
+│   ├── Verifiable Credential Issuance, Holding, & Presentation
+│   └── Node Recovery, Suspension, Revocation, & Key Rotation
+│
+├── 🟩 DOMAIN 2: GOVERNMENT SERVICE PLANE (COLOR: #10B981 - PALM GREEN)
+│   ├── Government Codes (G-codes: Authoritative Service Profiles)
+│   ├── Departmental Issuer & Verifier Authority Matrices
+│   ├── Permit, License, Benefit, & Case Workflows
+│   └── System-of-Record Adapters (County Records, Tax, Zoning)
+│
+├── 🟪 DOMAIN 3: PRIVACY & CONSENT PLANE (COLOR: #A855F7 - PURPLE NEON)
+│   ├── Selective Disclosure & Zero-Knowledge (Groth16 ZKP) Proofs
+│   ├── Consent Receipts & Purpose Limitation Controls
+│   ├── Delegated, Time-Boxed Access Grants
+│   └── Data Minimization & Field-Level Retention Policies
+│
+├── 🟧 DOMAIN 4: CIVIC VALUE PLANE (COLOR: #F59E0B - SUNSET GOLD)
+│   ├── Internal Double-Entry Integer Subledger (Zero Floating-Point Math)
+│   ├── Fiat Payment Adapter (ACH / FedNow / Card Settlement)
+│   ├── Authorized Stablecoin / Token Adapter (USD1 / USDY)
+│   └── Civic Credits, Entitlements, Refunds, & 3-Way Reconciliation
+│
+└── 🟥 DOMAIN 5: TRUST & OPERATIONS PLANE (COLOR: #FF007A - FLAMINGO PINK)
+    ├── Command Gateway & State-Machine Orchestration Kernel
+    ├── Policy Decision Point (Allowlists, Velocity, Time Rules)
+    ├── Tamper-Evident SHA-256 Hash-Chained Evidence Receipts (.anvil/ops.receipts.jsonl)
+    └── Process-G Release Gate Board (G0 Intent ➔ G7 Operate)
+```
 
 ---
 
-### 💜 Section 5: Open Trust (OTM) Artifacts (`#A835C4`)
-- **5.1 Artifact A1 — Open Checkbook**: Public transparency ledger mapping every expenditure to its primary instrument.
-- **5.2 Artifact A2 — Attestation Standard**: EIP-712 secp256k1 signature specification enabling verification without county dependencies.
-- **5.3 Artifact A3 — Provenance Ledger & Blocking Linter**:
-  - Automated gatekeeper refusing to render or publish unsourced claims.
-  - State machine demotion (`PROMOTED` → `DEMOTED` → `LINTER_BLOCKED`).
+## 🔄 10 CORE AGGREGATE STATE MACHINE FLOW TREES
+
+### 1. `CitizenIdentity` (`#00F2FE`)
+```text
+DRAFT ──► VERIFICATION_PENDING ──► ACTIVE ──┬──► RESTRICTED (Scope Limited)
+                                           ├──► SUSPENDED (Fraud/Audit)
+                                           ├──► RECOVERY_PENDING (Lost Key)
+                                           └──► CLOSED (Archived)
+```
+
+### 2. `CitizenNode` (`#00F2FE`)
+```text
+UNBOUND ──► BOUND ──► ACTIVE ──┬──► ROTATION_PENDING ──► ACTIVE
+                              ├──► RECOVERY_PENDING ──► ACTIVE
+                              └──► COMPROMISED ──► REVOKED
+```
+
+### 3. `GovernmentCode` (`#10B981`)
+```text
+DRAFT ──► REVIEW ──► AUTHORIZED ──► ACTIVE ──┬──► PAUSED
+                                             └──► RETIRED
+```
+
+### 4. `Credential` (`#10B981`)
+```text
+DRAFT ──► PENDING_ISSUANCE ──► ISSUED ──► ACTIVE ──┬──► SUSPENDED ──► ACTIVE
+                                                   ├──► REVOKED
+                                                   ├──► EXPIRED
+                                                   └──► SUPERSEDED
+```
+
+### 5. `ProofRequest` (`#A855F7`)
+```text
+CREATED ──► PRESENTED ──┬──► VERIFIED
+                        ├──► DECLINED
+                        ├──► EXPIRED
+                        └──► CANCELLED
+```
+
+### 6. `AccessGrant` (`#A855F7`)
+```text
+PROPOSED ──► PENDING_CONSENT ──► ACTIVE ──┬──► EXPIRED
+                                           └──► REVOKED
+```
+
+### 7. `ServiceCase` (`#10B981`)
+```text
+DRAFT ──► SUBMITTED ──► UNDER_REVIEW ──┬──► ACTION_REQUIRED ──► SUBMITTED
+                                        ├──► APPROVED ──► ISSUED ──► CLOSED
+                                        └──► DENIED ──► APPEALED ──► UNDER_REVIEW
+```
+
+### 8. `CivicValueAccount` (`#F59E0B`)
+```text
+OPEN ──► RESTRICTED ──► SUSPENDED ──► CLOSED
+```
+
+### 9. `ValueInstruction` (`#F59E0B`)
+```text
+DRAFT ──► VALIDATING ──► PENDING_APPROVAL ──► AUTHORIZED ──► SUBMITTED ──► SETTLING ──► SETTLED ──┬──► REVERSED
+                                                                                                 ├──► FAILED
+                                                                                                 └──► DISPUTED
+```
+
+### 10. `AuditReceipt` (`#FF007A`)
+```text
+CREATED ──► SEALED ──► VERIFIED ──► EXCEPTION
+```
 
 ---
 
-### 🧡 Section 6: ANVIL Gate Board & Operational Governance (`#FF6A3D`)
-- **6.1 Exit Gates G0–G7**:
-  - `G0` Charter Signed · `G1` Recon Landed · `G2` Perimeter Verified · `G3` Foundation Merged · `G4` Quality Coverage ≥ 85% · `G5` Live Data Verified · `G6` Publication Safe · `G7` Public Launch.
-- **6.2 Human Blocking Gates G-M01–G-M14**:
-  - `G-M01` Zero PII On-Chain Gate · `G-M04` Branding Rule (No Seal/Lockup) · `G-M14` Paid-Tier Firewall.
+## 📜 OPEN SOURCE LICENSING
 
----
-
-### 🛡️ Section 7: Legal Perimeter & Design Laws (`#060C1B`)
-- **7.1 Design Law 0**: Zero county signature, budget line, or vendor number required for Tier 1.
-- **7.2 Design Law 1**: One-Way Wall — public edge never writes to internal government origin databases.
-- **7.3 Design Law 2**: Summary Law — summaries, briefings, or press releases can never serve as primary instruments.
-- **7.4 Design Law 3**: Verifiability without trust — every number publishes with its cryptographic signature payload.
+MIA by VIA is dual-licensed under the **Apache License, Version 2.0** and the **MIT License**.
+See the repository [`LICENSE`](file:///C:/Users/Kevan/.gemini/antigravity-ide/scratch/new-money-open-trust/LICENSE) file for complete text.

@@ -139,12 +139,52 @@ export const ColorCodedTableOfContentsView: React.FC<ColorCodedTableOfContentsVi
       {/* Header */}
       <div className="exec-page-header glass-card-strip">
         <div className="unykorn-brand-tag text-xs text-aqua font-bold tracking-wider uppercase">
-          MIA BY VIA · MASTER SYSTEM INDEX
+          MIA BY VIA · MASTER SYSTEM INDEX & FLOW TREE
         </div>
-        <h1 className="text-pearl margin-top">Color-Coded Table of Contents</h1>
+        <h1 className="text-pearl margin-top">Color-Coded Table of Contents & Flow Tree</h1>
         <p className="text-coral-stone margin-top">
-          Master architectural index categorizing all sections of the MIA by VIA Whitepaper, OPEN TRUST (OTM) artifacts, ANVIL gates, and legal perimeter rules.
+          Master architectural index categorizing the 5 Controlled Planes, 10 Aggregate State Machines, MIA by VIA Whitepaper, OPEN TRUST (OTM) artifacts, ANVIL gates, and legal perimeter rules.
         </p>
+      </div>
+
+      {/* 5 Controlled Planes Flow Tree Visualizer */}
+      <div className="bg-slate-900/90 border border-teal-500/30 p-6 rounded-2xl backdrop-blur-xl shadow-2xl space-y-4">
+        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+          <BookOpen className="text-cyan-400" size={20} />
+          5 Controlled Operational Planes System Flow Tree
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 font-mono text-xs">
+          <div className="p-3 bg-slate-950 border border-cyan-500/40 rounded-xl space-y-1">
+            <span className="text-cyan-400 font-bold block">1. CIVIC IDENTITY PLANE</span>
+            <span className="text-slate-400 text-[10px] block">Citizen Nodes, DIDs, Key Lifecycle, Recovery</span>
+            <span className="text-emerald-400 text-[10px] block font-bold">State: ACTIVE</span>
+          </div>
+
+          <div className="p-3 bg-slate-950 border border-emerald-500/40 rounded-xl space-y-1">
+            <span className="text-emerald-400 font-bold block">2. GOV SERVICE PLANE</span>
+            <span className="text-slate-400 text-[10px] block">G-codes, Department Issuer Authority, Case Workflows</span>
+            <span className="text-emerald-400 text-[10px] block font-bold">State: AUTHORIZED</span>
+          </div>
+
+          <div className="p-3 bg-slate-950 border border-purple-500/40 rounded-xl space-y-1">
+            <span className="text-purple-400 font-bold block">3. PRIVACY & CONSENT</span>
+            <span className="text-slate-400 text-[10px] block">Selective Disclosure, Groth16 ZK Proofs, Consent</span>
+            <span className="text-purple-400 text-[10px] block font-bold">State: VERIFIED</span>
+          </div>
+
+          <div className="p-3 bg-slate-950 border border-amber-500/40 rounded-xl space-y-1">
+            <span className="text-amber-400 font-bold block">4. CIVIC VALUE PLANE</span>
+            <span className="text-slate-400 text-[10px] block">Double-Entry Ledger, Integer Minor Units, Payments</span>
+            <span className="text-amber-400 text-[10px] block font-bold">State: BALANCED</span>
+          </div>
+
+          <div className="p-3 bg-slate-950 border border-rose-500/40 rounded-xl space-y-1">
+            <span className="text-rose-400 font-bold block">5. TRUST & OPERATIONS</span>
+            <span className="text-slate-400 text-[10px] block">Policy Decision Point, Hash-Chained Receipts</span>
+            <span className="text-rose-400 text-[10px] block font-bold">State: SEALED</span>
+          </div>
+        </div>
       </div>
 
       {/* Domain Filters */}
