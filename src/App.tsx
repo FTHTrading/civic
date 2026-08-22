@@ -24,6 +24,7 @@ import { AnvilGateBoardView } from './components/AnvilGateBoardView';
 import { SandboxLoginView } from './components/sandbox/SandboxLoginView';
 import { SandboxLayout } from './components/sandbox/SandboxLayout';
 import { SandboxDashboardView } from './components/sandbox/SandboxDashboardView';
+import { StateMachineExplorerView } from './components/StateMachineExplorerView';
 import { Footer } from './components/Footer';
 import './App.css';
 
@@ -119,6 +120,7 @@ export function App() {
             totalGatesCount={gates.length}
           />
         )}
+        {activeTab === 'STATE_MACHINES' && <StateMachineExplorerView />}
         {activeTab === 'TOC' && <ColorCodedTableOfContentsView setActiveTab={setActiveTab} />}
         {activeTab === 'G_CODES' && <GCodesRegistryView gCodes={MOCK_GCODES} />}
         {activeTab === 'C_NODES' && <CNodesWalletView profile={MOCK_CNODE} zkpProofs={MOCK_ZKP_PROOFS} />}

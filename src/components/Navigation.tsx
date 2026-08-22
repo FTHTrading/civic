@@ -4,6 +4,7 @@ import { LockKeyhole, ChevronDown, Search, ArrowUpRight, Cpu, Wallet, Shield, Fi
 export type ExecutiveTabType =
   | 'HOME'
   | 'TOC'
+  | 'STATE_MACHINES'
   | 'INFRASTRUCTURE'
   | 'DOCUMENTS'
   | 'SERVICES'
@@ -67,7 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
           <div className="dropdown-menu-wrapper">
             <button
               onClick={() => toggleDropdown('platform')}
-              className={`exec-nav-item dropdown-btn ${['HOME', 'SERVICES', 'PLATFORM', 'G_CODES', 'C_NODES', 'THREE_PILLARS'].includes(activeTab) ? 'active' : ''}`}
+              className={`exec-nav-item dropdown-btn ${['HOME', 'SERVICES', 'PLATFORM', 'STATE_MACHINES', 'G_CODES', 'C_NODES', 'THREE_PILLARS'].includes(activeTab) ? 'active' : ''}`}
             >
               Platform <ChevronDown size={14} strokeWidth={1.5} />
             </button>
@@ -75,6 +76,9 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
               <div className="dropdown-panel glass-dropdown">
                 <button onClick={() => handleNavClick('HOME')} className="dropdown-item">
                   <Sparkles size={14} className="text-aqua mr-2" /> Platform Overview
+                </button>
+                <button onClick={() => handleNavClick('STATE_MACHINES')} className="dropdown-item">
+                  <Cpu size={14} className="text-teal-400 mr-2" /> State Machine Kernel (10 Aggregates)
                 </button>
                 <button onClick={() => handleNavClick('TOC')} className="dropdown-item">
                   <BookOpen size={14} className="text-sunset mr-2" /> Color-Coded Table of Contents
