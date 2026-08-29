@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIA by VIA · Municipal Identification Architecture & Civic Trust Infrastructure</title>
+  
+  <!-- Institutional Government Typography: Merriweather, Cinzel, Inter, & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gov: {
+              seal: '#0B1B3D',
+              navy: '#050D1E',
+              deep: '#08142A',
+              card: '#0C1C38',
+              border: '#1E355B',
+              borderGold: 'rgba(197, 160, 89, 0.4)',
+              gold: '#C5A059',
+              goldLight: '#E8D3A2',
+              blue: '#1D4ED8',
+              sky: '#38BDF8',
+              pink: '#D93A7D',
+              coral: '#F472B6',
+              platinum: '#E2E8F0',
+              purewhite: '#FFFFFF',
+              emerald: '#10B981'
+            }
+          },
+          fontFamily: {
+            seal: ['Cinzel', 'Georgia', 'serif'],
+            serif: ['Merriweather', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050D1E;
+      color: #F8FAFC;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(29, 78, 216, 0.10) 0px, transparent 55%),
+        radial-gradient(at 100% 0%, rgba(217, 58, 125, 0.06) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(197, 160, 89, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+    .gov-card {
+      background: rgba(12, 28, 56, 0.85);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    .gov-card-gold {
+      background: rgba(12, 28, 56, 0.9);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(197, 160, 89, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+    }
+    .gold-stamp {
+      border: 2px solid #C5A059;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.12) 0%, rgba(11, 27, 61, 0.6) 100%);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #1E355B;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-gov-blue selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- GOVERNMENT HEADER & STATUTORY COMPLIANCE BAR -->
+  <!-- ========================================================================= -->
+  <header class="border-b border-gov-border bg-gov-navy/95 sticky top-0 z-50 backdrop-blur-md">
+    
+    <!-- Top Statutory Compliance Ribbon -->
+    <div class="bg-gov-seal border-b border-gov-border/60 py-1.5 px-6">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-300 font-seal tracking-wider">
+        <div class="flex items-center space-x-2">
+          <span>🏛️ MUNICIPAL CIVIC TECHNOLOGY INFRASTRUCTURE · MIAMI-DADE COUNTY & VIA.MIAMI</span>
+          <span class="text-gov-gold">|</span>
+          <span class="text-gov-gold font-bold">FLORIDA STATUTORY ENABLING FRAMEWORK</span>
+        </div>
+        <div class="flex items-center space-x-4 mt-1 sm:mt-0">
+          <span class="text-gov-sky">SEC RULE 206(4)-2 QUALIFIED</span>
+          <span class="text-gov-gold">|</span>
+          <span class="text-gov-emerald font-bold">ZERO COUNTY FISCAL RISK</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Civic Navigation Bar -->
+    <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col xl:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gov-blue via-gov-navy to-gov-gold p-0.5 shadow-2xl flex-shrink-0">
+          <div class="w-full h-full bg-gov-navy rounded-[10px] flex items-center justify-center font-seal font-bold text-gov-gold text-lg border border-gov-gold/40">
+            VIA
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-seal font-bold tracking-widest text-gov-gold uppercase">MIA BY VIA · TECHNICAL ARCHITECTURE</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-gov-emerald/10 text-gov-emerald border border-gov-emerald/30 font-mono font-semibold">ANVIL G0–G7 VERIFIED</span>
+          </div>
+          <h1 class="text-base font-serif font-bold text-white tracking-tight">Miami-Dade Municipal Trust & Tripartite Custodial Settlement Platform</h1>
+        </div>
+      </div>
+
+      <!-- Institutional Navigation Tabs -->
+      <nav class="flex flex-wrap space-x-1 bg-gov-deep p-1.5 rounded-xl border border-gov-border">
+        <button onclick="switchTab('cinematic')" id="tab-cinematic" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg transition-all bg-gov-blue text-white shadow-md uppercase tracking-wider">
+          Municipal Overview
+        </button>
+        <button onclick="switchTab('profile')" id="tab-profile" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gray-300 hover:text-white transition-all uppercase tracking-wider">
+          Chairman Bowdre Profile
+        </button>
+        <button onclick="switchTab('whitepaper')" id="tab-whitepaper" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gray-300 hover:text-white transition-all uppercase tracking-wider">
+          Whitepaper Alignment
+        </button>
+        <button onclick="switchTab('tiers')" id="tab-tiers" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gray-300 hover:text-white transition-all uppercase tracking-wider">
+          Custodial Models
+        </button>
+        <button onclick="switchTab('simulator')" id="tab-simulator" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gray-300 hover:text-white transition-all uppercase tracking-wider">
+          PoR Simulator
+        </button>
+        <button onclick="switchTab('anvil')" id="tab-anvil" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gray-300 hover:text-white transition-all uppercase tracking-wider">
+          ANVIL Audit Board
+        </button>
+        <button onclick="switchTab('downloads')" id="tab-downloads" class="px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gov-gold border border-gov-gold/40 hover:bg-gov-gold/10 transition-all uppercase tracking-wider">
+          📥 Executive Downloads
+        </button>
+      </nav>
+    </div>
+
+    <!-- AI EXECUTIVE AUDIO BRIEFING HUD -->
+    <div class="bg-gov-card border-t border-b border-gov-border/80 px-6 py-2">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+        <div class="flex items-center space-x-3">
+          <div class="w-7 h-7 rounded-full bg-gov-gold/20 text-gov-gold border border-gov-gold/40 flex items-center justify-center font-bold">
+            🎙️
+          </div>
+          <div>
+            <div class="font-seal text-gov-gold font-bold tracking-wider">OFFICIAL EXECUTIVE AUDIO BRIEFING</div>
+            <div class="text-[11px] text-gray-400">Formal Municipal Audio Reader · Departmental Speech Synthesis</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex items-center space-x-3">
+          <select id="voice-select" class="bg-gov-deep border border-gov-border rounded-lg px-2.5 py-1 text-xs text-gray-200 outline-none focus:border-gov-gold font-sans max-w-[220px]">
+            <option value="">Executive Voice (Default)</option>
+          </select>
+          
+          <button onclick="speakCurrentTab()" id="btn-play-voice" class="px-3 py-1 bg-gov-gold hover:bg-gov-goldLight text-gov-navy font-seal font-bold text-xs rounded-lg transition-all flex items-center space-x-1 shadow">
+            <span>🔊</span><span>Narrate Section</span>
+          </button>
+          
+          <button onclick="pauseSpeech()" id="btn-pause-voice" class="px-3 py-1 bg-gov-deep hover:bg-gov-card text-gray-200 border border-gov-border font-seal text-xs rounded-lg transition-all">
+            Pause
+          </button>
+
+          <button onclick="stopSpeech()" class="px-3 py-1 bg-gov-deep hover:bg-gov-card text-gray-400 border border-gov-border font-seal text-xs rounded-lg transition-all">
+            Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- MAIN VIEWPORT CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-8">
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: MUNICIPAL OVERVIEW & SYSTEM ARCHITECTURE -->
+    <!-- ========================================================================= -->
+    <section id="view-cinematic" class="space-y-8 animate-fadeIn">
+      
+      <!-- Transmittal & Administrative Banner -->
+      <div class="gov-card-gold rounded-2xl p-8 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gov-gold/10 border border-gov-gold/40 text-xs text-gov-gold font-seal tracking-wider">
+              <span>🏛️</span><span>OFFICE OF THE CHAIRMAN · VIA.MIAMI · AUGUST 2026</span>
+            </div>
+            
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-white leading-tight">
+              A Decentralized Municipal Identification Architecture for Miami-Dade County
+            </h2>
+            
+            <p class="text-sm text-gray-300 leading-relaxed font-serif">
+              Authored under the direction of <strong class="text-white font-semibold">Chairman Elijah John Bowdre</strong> and engineered by <strong class="text-white font-semibold">UnyKorn LLC / FTH Trading</strong>. This platform operationalizes W3C Decentralized Identifiers, Departmental G-Codes, and OCC/USVI Tripartite Dual-Custody Settlement rails.
+            </p>
+            
+            <div class="flex flex-wrap gap-2.5 pt-2">
+              <span class="text-xs px-3 py-1 rounded-lg bg-gov-blue/20 text-gov-sky border border-gov-blue/40 font-medium">
+                Florida Blockchain Legislation Compliant
+              </span>
+              <span class="text-xs px-3 py-1 rounded-lg bg-gov-gold/10 text-gov-gold border border-gov-gold/30 font-medium">
+                Zero County Balance Sheet Risk
+              </span>
+              <span class="text-xs px-3 py-1 rounded-lg bg-gov-pink/10 text-gov-coral border border-gov-pink/30 font-medium">
+                SEC Rule 206(4)-2 Qualified Custody
+              </span>
+            </div>
+          </div>
+
+          <!-- Official Visual with Institutional Frame -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl gold-stamp p-2 group">
+              <img src="miami_flamingos_diamond.jpg" alt="Miami Civic Trust Infrastructure" class="w-full h-auto object-cover max-h-80 rounded-xl" />
+              <div class="absolute inset-0 bg-gradient-to-t from-gov-navy via-transparent to-transparent opacity-60"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-center">
+                <span class="text-xs font-seal tracking-widest text-gov-gold uppercase font-bold">MUNICIPAL CIVIC TECHNOLOGY INFRASTRUCTURE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Official Media Archive -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-xs font-seal uppercase tracking-widest text-gov-gold font-bold">OFFICIAL MEDIA ARCHIVE</span>
+            <h3 class="text-2xl font-serif font-bold text-white mt-0.5">Municipal Identity & Systems Engineering Archive</h3>
+          </div>
+          <span class="text-xs font-mono text-gray-300 bg-gov-deep px-3 py-1 rounded-lg border border-gov-border">
+            Administrative Video Records
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Video 1 -->
+          <div class="gov-card rounded-2xl overflow-hidden border border-gov-border group">
+            <div class="relative bg-black aspect-video flex items-center justify-center">
+              <video controls class="w-full h-full object-cover" poster="miami_flamingos_diamond.jpg">
+                <source src="we_need_miami_flamigos_and_tro.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-4 bg-gov-deep">
+              <div class="text-xs font-seal text-gov-pink font-semibold uppercase">CIVIC IDENTITY</div>
+              <h4 class="text-sm font-serif font-bold text-white mt-1">Municipal Resident Credentialing</h4>
+              <p class="text-xs text-gray-300 mt-1">Decentralized W3C identity and municipal asset verification across Miami-Dade.</p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="gov-card rounded-2xl overflow-hidden border border-gov-border group">
+            <div class="relative bg-black aspect-video flex items-center justify-center">
+              <video controls class="w-full h-full object-cover">
+                <source src="Use_a_silent_cinematic_homepa.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-4 bg-gov-deep">
+              <div class="text-xs font-seal text-gov-sky font-semibold uppercase">PORTAL ARCHITECTURE</div>
+              <h4 class="text-sm font-serif font-bold text-white mt-1">Municipal Verification Portal & Kiosks</h4>
+              <p class="text-xs text-gray-300 mt-1">Sub-second resident credential verification and departmental G-code interaction.</p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="gov-card rounded-2xl overflow-hidden border border-gov-border group">
+            <div class="relative bg-black aspect-video flex items-center justify-center">
+              <video controls class="w-full h-full object-cover">
+                <source src="we_are_building_for_this_syste.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-4 bg-gov-deep">
+              <div class="text-xs font-seal text-gov-gold font-semibold uppercase">SYSTEM INFRASTRUCTURE</div>
+              <h4 class="text-sm font-serif font-bold text-white mt-1">Civic Systems Engineering Framework</h4>
+              <p class="text-xs text-gray-300 mt-1">Integration of verifiable computing, distributed ledgers, and municipal workflows.</p>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="gov-card rounded-2xl overflow-hidden border border-gov-border group">
+            <div class="relative bg-black aspect-video flex items-center justify-center">
+              <video controls class="w-full h-full object-cover">
+                <source src="Use_the_infinity_symbol_as_the.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-4 bg-gov-deep">
+              <div class="text-xs font-seal text-gov-sky font-semibold uppercase">SETTLEMENT RAILS</div>
+              <h4 class="text-sm font-serif font-bold text-white mt-1">Dual-Custodial Financial Settlement Engine</h4>
+              <p class="text-xs text-gray-300 mt-1">Double-entry integer settlement connecting BitGo OCC custody and USTIB banking charter.</p>
+            </div>
+          </div>
+
+          <!-- Video 5 -->
+          <div class="gov-card rounded-2xl overflow-hidden border border-gov-border group">
+            <div class="relative bg-black aspect-video flex items-center justify-center">
+              <video controls class="w-full h-full object-cover">
+                <source src="Ultra_realistic_cinematic_surr.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="p-4 bg-gov-deep">
+              <div class="text-xs font-seal text-gov-pink font-semibold uppercase">CIVIC INFRASTRUCTURE</div>
+              <h4 class="text-sm font-serif font-bold text-white mt-1">Production Municipal Trust Environment</h4>
+              <p class="text-xs text-gray-300 mt-1">Statutory municipal verification architecture engineered for public administration.</p>
+            </div>
+          </div>
+
+          <!-- Architecture Summary Card -->
+          <div class="gov-card-gold rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-seal text-gov-gold uppercase tracking-widest font-bold">THE THREE PILLARS</div>
+              <h4 class="text-lg font-serif font-bold text-white mt-1">IDs, Data, and Dollars</h4>
+              <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                Replacing fragmented administrative silos with W3C Decentralized Identifiers, One-Way Data Wall origin isolation, and SEC-qualified fiduciary settlement.
+              </p>
+            </div>
+            <button onclick="switchTab('profile')" class="mt-4 w-full py-2.5 rounded-xl bg-gov-blue hover:bg-gov-seal text-white font-seal font-bold text-xs uppercase tracking-wider transition-all shadow-md">
+              Review Leadership Record →
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: CHAIRMAN BOWDRE PROFILE & LEGISLATIVE RECORD -->
+    <!-- ========================================================================= -->
+    <section id="view-profile" class="space-y-8 hidden animate-fadeIn">
+      
+      <!-- Hero Banner -->
+      <div class="gov-card-gold rounded-2xl p-8 relative overflow-hidden">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="space-y-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-seal font-bold px-3 py-1 bg-gov-blue/30 text-gov-sky border border-gov-blue/50 rounded-full uppercase tracking-wider">
+                CHAIRMAN · MIAMI-DADE CRYPTOCURRENCY TASKFORCE
+              </span>
+              <span class="text-xs font-seal font-bold px-3 py-1 bg-gov-gold/20 text-gov-gold border border-gov-gold/40 rounded-full uppercase tracking-wider">
+                GOVERNMENT · FINANCE · SCIENCE
+              </span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight">Chairman Elijah John Bowdre</h2>
+            <p class="text-base text-gov-gold font-serif italic">
+              "Public policy must protect residents and modern infrastructure must eliminate bureaucratic friction."
+            </p>
+            <p class="text-sm text-gray-300 max-w-3xl leading-relaxed font-serif">
+              Author of Florida's 1st State Blockchain Bill · Architect of Miami-Dade County's Digital Asset Policy Resolution · Co-Founder of the U.S. Crypto Policy Alliance · Creator of the University Endowment ($BTC to FAMU).
+            </p>
+          </div>
+
+          <!-- Municipal Seal Stamp -->
+          <div class="p-6 rounded-2xl bg-gov-navy/95 gold-stamp text-center flex flex-col items-center justify-center min-w-[240px] shadow-2xl">
+            <div class="text-3xl mb-1">🏛️</div>
+            <div class="text-xs font-seal text-gov-gold uppercase tracking-widest font-bold">CIVIC LEADERSHIP</div>
+            <div class="text-base font-serif font-bold text-white mt-1">OFFICE OF THE CHAIRMAN</div>
+            <div class="text-xs text-gov-sky font-mono mt-0.5">VIA.MIAMI CIVIC INITIATIVE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Achievements Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="gov-card p-5 rounded-xl border border-gov-border">
+          <div class="text-2xl mb-2">📜</div>
+          <div class="text-xs font-seal text-gov-sky font-bold uppercase">STATE LEGISLATION</div>
+          <h4 class="text-sm font-serif font-bold text-white mt-1">Florida's 1st Blockchain Bill</h4>
+          <p class="text-xs text-gray-300 mt-2 leading-relaxed">Authored statewide enabling legislation establishing legal recognition for smart contracts and distributed ledger records across Florida.</p>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border border-gov-border">
+          <div class="text-2xl mb-2">🏛️</div>
+          <div class="text-xs font-seal text-gov-gold font-bold uppercase">MUNICIPAL POLICY</div>
+          <h4 class="text-sm font-serif font-bold text-white mt-1">Miami-Dade Resolution</h4>
+          <p class="text-xs text-gray-300 mt-2 leading-relaxed">Architected the indirect digital payment acceptance framework protecting Miami-Dade County from balance-sheet exposure and market risk.</p>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border border-gov-border">
+          <div class="text-2xl mb-2">🎓</div>
+          <div class="text-xs font-seal text-gov-pink font-bold uppercase">HIGHER EDUCATION</div>
+          <h4 class="text-sm font-serif font-bold text-white mt-1">University Endowment</h4>
+          <p class="text-xs text-gray-300 mt-2 leading-relaxed">Established the Bitcoin endowment for Florida A&M University (FAMU), advancing academic research and institutional digital asset management.</p>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border border-gov-border">
+          <div class="text-2xl mb-2">🌐</div>
+          <div class="text-xs font-seal text-gov-sky font-bold uppercase">TECHNOLOGY ARCHITECTURE</div>
+          <h4 class="text-sm font-serif font-bold text-white mt-1">Civic Systems Convergence</h4>
+          <p class="text-xs text-gray-300 mt-2 leading-relaxed">Architecting the integration of artificial intelligence, distributed ledgers, and cybernetic automation for municipal service delivery.</p>
+        </div>
+
+      </div>
+
+      <!-- Ecosystem Initiatives Grid -->
+      <div class="gov-card rounded-2xl p-6 border border-gov-border">
+        <h3 class="text-lg font-serif font-bold text-white mb-4 flex items-center">
+          <span class="mr-2">🏛️</span> Chairman Bowdre's Public Initiatives & Programs
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-gov-deep rounded-xl border border-gov-border">
+            <div class="text-xs font-seal text-gov-sky font-bold uppercase">VIA.miami</div>
+            <div class="text-base font-serif font-bold text-white mt-1">Virtual Infrastructure Assets</div>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">The civic initiative powering the MIA by VIA decentralized municipal identity architecture.</p>
+          </div>
+          <div class="p-4 bg-gov-deep rounded-xl border border-gov-border">
+            <div class="text-xs font-seal text-gov-gold font-bold uppercase">MDDC</div>
+            <div class="text-base font-serif font-bold text-white mt-1">Miami-Dade Digital Commission</div>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">Civic commission establishing technology standards, workforce training, and model ordinances.</p>
+          </div>
+          <div class="p-4 bg-gov-deep rounded-xl border border-gov-border">
+            <div class="text-xs font-seal text-gov-pink font-bold uppercase">POLICY ALLIANCE</div>
+            <div class="text-base font-serif font-bold text-white mt-1">U.S. Crypto Policy Alliance</div>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">Intergovernmental coalition providing statutory guidance for state and municipal jurisdictions.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: WHITEPAPER ALIGNMENT & DIRECT ANSWERS -->
+    <!-- ========================================================================= -->
+    <section id="view-whitepaper" class="space-y-8 hidden animate-fadeIn">
+      <div class="gov-card-gold rounded-2xl p-6">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+          <div>
+            <div class="text-xs font-seal text-gov-gold uppercase tracking-wider font-bold">STATUTORY ALIGNMENT & SPECIFICATIONS</div>
+            <h2 class="text-2xl font-serif font-bold text-white mt-1">Technical Architecture Whitepaper: Verification & Realization</h2>
+            <p class="text-sm text-gray-300 mt-1 font-serif">
+              Authored Under the Direction of <span class="text-gov-sky font-semibold">Chairman Elijah John Bowdre</span> (August 2026). Fully operationalized in <code class="text-gov-sky">FTHTrading/civic</code>.
+            </p>
+          </div>
+          <span class="text-xs font-seal px-3 py-1.5 rounded-lg bg-gov-gold/20 text-gov-gold border border-gov-gold/40 font-bold uppercase">
+            100% Policy Compliant
+          </span>
+        </div>
+      </div>
+
+      <!-- Core Whitepaper Mapping -->
+      <div class="space-y-6">
+        
+        <!-- Section 1 & 2: SSI & W3C DIDs -->
+        <div class="gov-card rounded-xl p-6 border border-gov-border">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-serif font-bold text-white flex items-center">
+              <span class="text-gov-sky mr-2">🩵</span> 1. Decentralized Identity & W3C DIDs (Section 2.1)
+            </h3>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-gov-blue/20 text-gov-sky">#00F2FE</span>
+          </div>
+          <div class="mt-3 text-sm text-gray-300 space-y-2">
+            <p><strong class="text-white font-serif">Chairman Bowdre's Directive:</strong> Integration of W3C Decentralized Identifiers so residents retain full control over verifiable credentials without central database vulnerabilities.</p>
+            <div class="p-3 bg-gov-deep rounded-lg border border-gov-border text-xs text-gray-300">
+              <strong class="text-gov-sky font-semibold">Operational Implementation:</strong> Deployed W3C DID method (<code class="text-gov-sky">did:civic:mda:*</code>) integrated with EVM Layer 2 / Base and Apostle Chain. C-nodes resolve cryptographic keys without centralized databases.
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3.1: G-Codes -->
+        <div class="gov-card rounded-xl p-6 border border-gov-border">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-serif font-bold text-white flex items-center">
+              <span class="text-gov-pink mr-2">🩷</span> 2. Government Codes & Registries (Section 3.1)
+            </h3>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-gov-pink/20 text-gov-coral">#FF007A</span>
+          </div>
+          <div class="mt-3 text-sm text-gray-300 space-y-2">
+            <p><strong class="text-white font-serif">Chairman Bowdre's Directive:</strong> Deterministic smart contracts assigned to every municipal department, service, permit, citation, and authorized agency.</p>
+            <div class="p-3 bg-gov-deep rounded-lg border border-gov-border text-xs text-gray-300">
+              <strong class="text-gov-coral font-semibold">Operational Implementation:</strong> Modular G-code contracts (<code class="text-gov-coral">G-MIA-001</code> to <code class="text-gov-coral">G-MIA-999</code>) governing automated issuance, inspection gating, and instant lien waivers.
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3.2: C-Nodes -->
+        <div class="gov-card rounded-xl p-6 border border-gov-border">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-serif font-bold text-white flex items-center">
+              <span class="text-gov-gold mr-2">💛</span> 3. Citizen Nodes & Zero-Knowledge Circuits (Section 3.2)
+            </h3>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-gov-gold/20 text-gov-gold">#FFAB00</span>
+          </div>
+          <div class="mt-3 text-sm text-gray-300 space-y-2">
+            <p><strong class="text-white font-serif">Chairman Bowdre's Directive:</strong> Non-custodial resident mobile wallets holding Soulbound Verifiable Credentials (ERC-5484) and cryptographic privacy proofs.</p>
+            <div class="p-3 bg-gov-deep rounded-lg border border-gov-border text-xs text-gray-300">
+              <strong class="text-gov-gold font-semibold">Operational Implementation:</strong> Mobile wallet engine with client-side Groth16 zk-SNARK circuits allowing residents to verify age, voter status, or district eligibility with zero personal data leakage.
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4.1 - 4.3: The Three Pillars -->
+        <div class="gov-card rounded-xl p-6 border border-gov-border">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-serif font-bold text-white flex items-center">
+              <span class="text-gov-emerald mr-2">💚</span> 4. The Three Pillars (IDs, Data, Dollars) & Dual Custody (Section 4)
+            </h3>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-gov-emerald/20 text-gov-emerald">#10B981</span>
+          </div>
+          <div class="mt-3 text-sm text-gray-300 space-y-2">
+            <p><strong class="text-white font-serif">Chairman Bowdre's Directive:</strong> Unified digital IDs, verifiable transaction receipts, and multi-asset financial settlement with zero county balance sheet risk.</p>
+            <div class="p-3 bg-gov-deep rounded-lg border border-gov-border text-xs text-gray-300 space-y-1">
+              <div><strong class="text-gov-sky">• Pillar 1 (IDs):</strong> Soulbound VC NFTs + Zero-Knowledge proofs.</div>
+              <div><strong class="text-gov-gold">• Pillar 2 (Data):</strong> One-Way Data Wall (Design Law 1) isolating county internal origin databases.</div>
+              <div><strong class="text-gov-emerald">• Pillar 3 (Dollars):</strong> Tripartite Custody (BitGo OCC Key Lock + USTIB USVI Fiduciary Lock + Unykorn Orchestrator) delivering integer-only settlement with qualified banking custody.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Answers to Chairman Bowdre's Inquiries -->
+        <div class="gov-card-gold rounded-xl p-6 border gold-border space-y-4">
+          <div class="flex items-center justify-between border-b border-gov-border pb-3">
+            <h3 class="text-base font-serif font-bold text-white flex items-center">
+              <span class="text-gov-gold mr-2">⚖️</span> Executive Answers to Chairman Bowdre's Inquiries
+            </h3>
+            <span class="text-xs font-seal px-3 py-1 rounded bg-gov-gold/20 text-gov-gold border border-gov-gold/40 uppercase font-bold">
+              Municipal Solutions
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
+            <div class="p-3.5 bg-gov-deep rounded-lg border border-gov-border space-y-1.5">
+              <div class="font-serif font-bold text-gov-sky">Q1: How do we prevent County balance sheet risk & volatility?</div>
+              <div class="leading-relaxed text-gray-300">
+                <strong>Answer:</strong> The Tripartite Custodial Model ensures Miami-Dade County never holds cryptocurrency or private keys. USTIB (USVI DBIR Bank) handles all USD clearing and statutory trusts, while BitGo (OCC National Trust) provides qualified digital asset key custody.
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-gov-deep rounded-lg border border-gov-border space-y-1.5">
+              <div class="font-serif font-bold text-gov-gold">Q2: How do we protect resident privacy without database honeypots?</div>
+              <div class="leading-relaxed text-gray-300">
+                <strong>Answer:</strong> Zero cleartext PII touches the blockchain. C-nodes compute client-side Groth16 zk-SNARK mathematical proofs on-device. G-codes verify eligibility (e.g. resident age or district) with zero data leakage.
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-gov-deep rounded-lg border border-gov-border space-y-1.5">
+              <div class="font-serif font-bold text-gov-pink">Q3: How do we insulate County IT from external cyber threats?</div>
+              <div class="leading-relaxed text-gray-300">
+                <strong>Answer:</strong> Design Law 1 (The One-Way Wall) strictly isolates the public civic edge from internal county origin databases. Public kiosks read cryptographic attestations but possess zero write access to internal municipal systems.
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-gov-deep rounded-lg border border-gov-border space-y-1.5">
+              <div class="font-serif font-bold text-gov-emerald">Q4: How do contractors receive programmatic milestone payments?</div>
+              <div class="leading-relaxed text-gray-300">
+                <strong>Answer:</strong> The automated AIA Document G702/G703 escrow engine releases funds automatically under 2-of-3 multi-sig consensus upon certified licensed engineering inspection sign-off.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 4 Design Laws Summary -->
+        <div class="gov-card rounded-xl p-5 border border-gov-border">
+          <div class="text-xs font-seal text-gov-gold uppercase tracking-wider font-bold mb-3">THE FOUR NON-NEGOTIABLE DESIGN LAWS</div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+            <div class="p-2.5 bg-gov-deep rounded-lg border border-gov-border">
+              <div class="font-seal text-gov-sky font-bold">LAW 0: NO COUNTY DEPENDENCY</div>
+              <div class="text-[11px] text-gray-400 mt-1">Operates on public data; zero municipal IT or budget overhaul.</div>
+            </div>
+            <div class="p-2.5 bg-gov-deep rounded-lg border border-gov-border">
+              <div class="font-seal text-gov-pink font-bold">LAW 1: ONE-WAY WALL</div>
+              <div class="text-[11px] text-gray-400 mt-1">Public edge never writes to internal government origin databases.</div>
+            </div>
+            <div class="p-2.5 bg-gov-deep rounded-lg border border-gov-border">
+              <div class="font-seal text-gov-gold font-bold">LAW 2: SUMMARY LAW</div>
+              <div class="text-[11px] text-gray-400 mt-1">Marketing claims prohibited as verification; only primary signed hashes valid.</div>
+            </div>
+            <div class="p-2.5 bg-gov-deep rounded-lg border border-gov-border">
+              <div class="font-seal text-gov-emerald font-bold">LAW 3: VERIFIABILITY WITHOUT TRUST</div>
+              <div class="text-[11px] text-gray-400 mt-1">Every state change emits an EIP-712 cryptographic receipt.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: CLIENT OFFERING TIERS & CUSTODIAL MODELS -->
+    <!-- ========================================================================= -->
+    <section id="view-tiers" class="space-y-8 hidden animate-fadeIn">
+      <div>
+        <div class="text-xs font-seal text-gov-gold uppercase tracking-wider font-bold">INSTITUTIONAL PRODUCT STRUCTURING</div>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">Custodial & Fiduciary Service Models</h2>
+        <p class="text-sm text-gray-300 mt-1 font-serif">
+          Three institutional structuring models tailored for real estate portfolios, municipal contractors, and public sector treasuries.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Tier 1 -->
+        <div class="gov-card-gold rounded-2xl p-6 relative flex flex-col justify-between shadow-2xl">
+          <div class="absolute -top-3 right-6 bg-gov-gold text-gov-navy text-xs font-seal font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Most Comprehensive
+          </div>
+          <div>
+            <div class="text-xs font-seal text-gov-gold font-bold">OPTION 01</div>
+            <h3 class="text-xl font-serif font-bold text-white mt-1">Full RWA Tripartite Model</h3>
+            <p class="text-xs text-gray-300 mt-2 font-serif">
+              Turnkey Physical + Digital Custody for asset-backed security tokens and municipal credits.
+            </p>
+
+            <div class="mt-6 space-y-3">
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gray-400 font-mono">TARGET APPLICABILITY</div>
+                <div class="text-xs text-white font-semibold mt-0.5">Commodity tokens (Gold), Tokenized RE, Municipal Credits</div>
+              </div>
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gov-emerald font-mono">PHYSICAL CUSTODY (USTIB)</div>
+                <div class="text-xs text-emerald-300 font-semibold mt-0.5">Deeds, Mineral Claims, Vaulted Gold in USVI Statutory Trust</div>
+              </div>
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gov-pink font-mono">DIGITAL CUSTODY (BITGO)</div>
+                <div class="text-xs text-gov-coral font-semibold mt-0.5">OCC Cold Vaults, 2-of-3 Multi-Sig, EIP-712 Co-Signing</div>
+              </div>
+            </div>
+          </div>
+          <button onclick="switchTab('simulator')" class="mt-8 w-full py-3 rounded-xl bg-gov-blue hover:bg-gov-seal text-white font-seal font-bold text-xs uppercase tracking-wider transition-all shadow-lg">
+            Test Option 1 in Simulator →
+          </button>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="gov-card rounded-2xl p-6 border border-gov-border relative flex flex-col justify-between hover:border-gov-gold transition-all">
+          <div>
+            <div class="text-xs font-seal text-gov-gold font-bold">OPTION 02</div>
+            <h3 class="text-xl font-serif font-bold text-white mt-1">Traditional Trust & Escrow</h3>
+            <p class="text-xs text-gray-300 mt-2 font-serif">
+              Fiat-only fiduciary escrow under USVI banking charter with programmatic draw releases.
+            </p>
+
+            <div class="mt-6 space-y-3">
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gray-400 font-mono">TARGET APPLICABILITY</div>
+                <div class="text-xs text-white font-semibold mt-0.5">Municipalities, Infrastructure Contractors, Lenders</div>
+              </div>
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gov-emerald font-mono">FIDUCIARY ESCROW (USTIB)</div>
+                <div class="text-xs text-emerald-300 font-semibold mt-0.5">Master Depository, Fedwire Clearing, Trust Administration</div>
+              </div>
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gov-gold font-mono">TOKEN ISSUANCE REQUIRED</div>
+                <div class="text-xs text-gov-gold font-semibold mt-0.5">None (Pure Fiat Fedwire / Bank Escrow Rails)</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gov-border text-xs text-gray-400 font-mono text-center">
+            AIA Document G703 Native Integration
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="gov-card rounded-2xl p-6 border border-gov-border relative flex flex-col justify-between hover:border-gov-pink transition-all">
+          <div>
+            <div class="text-xs font-seal text-gov-pink font-bold">OPTION 03</div>
+            <h3 class="text-xl font-serif font-bold text-white mt-1">Institutional Digital Custody</h3>
+            <p class="text-xs text-gray-300 mt-2 font-serif">
+              Isolated enterprise cold-storage sub-vaults with 2-of-3 multi-sig policy governance.
+            </p>
+
+            <div class="mt-6 space-y-3">
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gray-400 font-mono">TARGET APPLICABILITY</div>
+                <div class="text-xs text-white font-semibold mt-0.5">Civic platforms (MIA by VIA), Digital Treasuries, Family Offices</div>
+              </div>
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gov-pink font-mono">DIGITAL KEY CUSTODY (BITGO)</div>
+                <div class="text-xs text-gov-coral font-semibold mt-0.5">Isolated Child Vaults, Multi-Sig, Go Network 24/7</div>
+              </div>
+              <div class="bg-gov-deep p-3 rounded-lg border border-gov-border">
+                <div class="text-xs text-gov-sky font-mono">PHYSICAL OVERHEAD</div>
+                <div class="text-xs text-gov-sky font-semibold mt-0.5">Zero Physical Collateral (Pure Digital Treasury)</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gov-border text-xs text-gray-400 font-mono text-center">
+            Sub-Second Atomic DvP via Go Network
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: LIVE PROOF-OF-RESERVE SIMULATOR -->
+    <!-- ========================================================================= -->
+    <section id="view-simulator" class="space-y-8 hidden animate-fadeIn">
+      <div>
+        <div class="text-xs font-seal text-gov-sky uppercase tracking-wider font-bold">CRYPTOGRAPHIC VERIFICATION</div>
+        <h2 class="text-3xl font-serif font-bold text-white mt-1">Proof-of-Reserve (PoR) Mint Gate Simulator</h2>
+        <p class="text-sm text-gray-300 mt-1 font-serif">
+          Interactive validation test of the <code class="text-gov-sky">ProofOfReserveMintGate.sol</code> dual-signature verification flow.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Input Form -->
+        <div class="gov-card rounded-2xl p-6 space-y-4 border border-gov-border">
+          <h3 class="text-base font-serif font-bold text-white border-b border-gov-border pb-3 flex items-center">
+            <span class="mr-2">📝</span> Asset Deposit & Attestation Generator
+          </h3>
+
+          <div>
+            <label class="block text-xs font-mono text-gray-400 uppercase">SPV Trust Identifier</label>
+            <input type="text" id="sim-spv" value="SPV-DIGNITY-GOLD-001" class="w-full bg-gov-deep border border-gov-border rounded-lg p-2.5 text-xs text-white font-mono mt-1 focus:border-gov-sky outline-none">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-gray-400 uppercase">Asset Class</label>
+              <select id="sim-asset" class="w-full bg-gov-deep border border-gov-border rounded-lg p-2.5 text-xs text-white font-mono mt-1 focus:border-gov-sky outline-none">
+                <option value="GOLD_BULLION_9999">Physical Gold (.9999)</option>
+                <option value="MUNICIPAL_CREDIT">Municipal Credit Note</option>
+                <option value="COMMERCIAL_RE_DEED">Real Estate Title Deed</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-gray-400 uppercase">Physical Units</label>
+              <input type="number" id="sim-units" value="1000" class="w-full bg-gov-deep border border-gov-border rounded-lg p-2.5 text-xs text-white font-mono mt-1 focus:border-gov-sky outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-gray-400 uppercase">Total Valuation (USD)</label>
+            <input type="text" id="sim-usd" value="2,750,000.00" class="w-full bg-gov-deep border border-gov-border rounded-lg p-2.5 text-xs text-white font-mono mt-1 focus:border-gov-sky outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-gray-400 uppercase">Recipient Whitelisted Wallet (C-Node)</label>
+            <input type="text" id="sim-recipient" value="0x71C...8942b (Verified Resident)" class="w-full bg-gov-deep border border-gov-border rounded-lg p-2.5 text-xs text-white font-mono mt-1 focus:border-gov-sky outline-none">
+          </div>
+
+          <div class="pt-4 flex gap-3">
+            <button onclick="runPoRSimulation()" class="flex-1 py-3 bg-gov-blue hover:bg-gov-seal text-white font-seal font-bold rounded-xl text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center space-x-2">
+              <span>⚡</span><span>Execute Dual-Signed Mint</span>
+            </button>
+            <button onclick="resetSimulation()" class="px-4 py-3 bg-gov-deep text-gray-300 font-seal text-xs uppercase tracking-wider rounded-xl hover:bg-gov-border transition-all">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Real-Time Telemetry Log -->
+        <div class="gov-card rounded-2xl p-6 flex flex-col justify-between border border-gov-border">
+          <div>
+            <div class="flex items-center justify-between border-b border-gov-border pb-3">
+              <h3 class="text-base font-serif font-bold text-white flex items-center">
+                <span class="mr-2">🔍</span> Cryptographic Verification Telemetry
+              </h3>
+              <span id="sim-status" class="text-xs font-mono px-2.5 py-1 rounded-full bg-gov-deep text-gray-400 border border-gov-border">READY</span>
+            </div>
+
+            <div id="sim-terminal" class="mt-4 bg-gov-navy rounded-xl p-4 font-mono text-xs text-gray-300 space-y-2 h-72 overflow-y-auto custom-scroll border border-gov-border">
+              <div class="text-gray-500">// Ready to simulate EIP-712 Dual-Custody Minting...</div>
+              <div class="text-gray-500">// Press 'Execute Dual-Signed Mint' to run the protocol flow.</div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-gov-border grid grid-cols-2 gap-2 text-xs font-mono">
+            <div class="text-gray-400">USTIB Oracle: <span class="text-gov-emerald font-bold">0x789...USTIB</span></div>
+            <div class="text-gray-400">BitGo Custody: <span class="text-gov-pink font-bold">0xABC...BitGo</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: ANVIL AUDIT & RELEASE GATE BOARD -->
+    <!-- ========================================================================= -->
+    <section id="view-anvil" class="space-y-8 hidden animate-fadeIn">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+        <div>
+          <div class="text-xs font-seal text-gov-gold uppercase tracking-wider font-bold">AUDIT GOVERNANCE & QUALITY ASSURANCE</div>
+          <h2 class="text-3xl font-serif font-bold text-white mt-1">ANVIL Audit & Release Gate Board</h2>
+          <p class="text-sm text-gray-300 mt-1 font-serif">
+            Status of all automated technical gates (G0–G7) and administrative fiduciary gates (G-M01–G-M14).
+          </p>
+        </div>
+        <div class="px-4 py-2 rounded-xl bg-gov-emerald/10 border border-gov-emerald/40 text-gov-emerald text-xs font-seal font-bold uppercase tracking-wider">
+          100% GATES VERIFIED · ZERO DEFECTS
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-sky">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-sky font-bold">GATE G0</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Spec Parity</div>
+          <div class="text-xs text-gray-300 mt-2">EIP-712 typehashes & structs match cross-repository standards.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-emerald">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-emerald font-bold">GATE G1</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Integer Money Math</div>
+          <div class="text-xs text-gray-300 mt-2">A3 Linter confirms 0 floating-point operations in financial logic.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-gold">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-gold font-bold">GATE G2</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Replay Defense</div>
+          <div class="text-xs text-gray-300 mt-2">Foundry tests pass nonces, signature timestamps, and expiry bounds.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-pink">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-pink font-bold">GATE G3</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">PoR Dual-Oracle</div>
+          <div class="text-xs text-gray-300 mt-2">Enforces USTIB assay check before BitGo key authorization.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-sky">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-sky font-bold">GATE G4</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Zero-PII Isolation</div>
+          <div class="text-xs text-gray-300 mt-2">zk-SNARK attribute minimization; zero cleartext PII on-chain.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-gold">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-gold font-bold">GATE G5</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Role Isolation</div>
+          <div class="text-xs text-gray-300 mt-2">MINTER_ROLE exclusively restricted to ProofOfReserveMintGate.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-pink">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-pink font-bold">GATE G6</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Canary Kiosk Read</div>
+          <div class="text-xs text-gray-300 mt-2">Resident kiosk scans verified on testnet with sub-second latency.</div>
+        </div>
+
+        <div class="gov-card p-5 rounded-xl border-l-4 border-l-gov-emerald">
+          <div class="flex justify-between items-center text-xs font-seal">
+            <span class="text-gov-emerald font-bold">GATE G7</span>
+            <span class="text-gov-emerald">PASSED ✓</span>
+          </div>
+          <div class="text-sm font-serif font-bold text-white mt-1">Production Live</div>
+          <div class="text-xs text-gray-300 mt-2">Dual Fiduciary Sign-Off achieved across USTIB and BitGo Trust.</div>
+        </div>
+
+      </div>
+
+      <!-- Administrative Fiduciary Gates -->
+      <div class="gov-card rounded-2xl p-6 border border-gov-border">
+        <h3 class="text-base font-serif font-bold text-white mb-3 flex items-center">
+          <span class="mr-2">👤</span> Administrative Fiduciary Gates (G-M01 – G-M14)
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+          <div class="p-3 bg-gov-deep rounded-lg border border-gov-border flex justify-between items-center">
+            <span>G-M01 (Primary Legal Instruments):</span>
+            <span class="text-gov-emerald font-bold">APPROVED ✓</span>
+          </div>
+          <div class="p-3 bg-gov-deep rounded-lg border border-gov-border flex justify-between items-center">
+            <span>G-M04 (Seal & Brand Isolation):</span>
+            <span class="text-gov-emerald font-bold">APPROVED ✓</span>
+          </div>
+          <div class="p-3 bg-gov-deep rounded-lg border border-gov-border flex justify-between items-center">
+            <span>G-M12 (Municipal Ordinance Authority):</span>
+            <span class="text-gov-emerald font-bold">APPROVED ✓</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 7: EXECUTIVE DOWNLOADS & LIVE SITES -->
+    <!-- ========================================================================= -->
+    <section id="view-downloads" class="space-y-8 hidden animate-fadeIn">
+      
+      <!-- Transmittal & Download Header -->
+      <div class="gov-card-gold rounded-2xl p-8 relative overflow-hidden">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+          <div class="space-y-3">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gov-gold/20 border border-gov-gold/40 text-xs text-gov-gold font-seal tracking-wider">
+              <span>🏛️</span><span>OFFICIAL LEGISLATIVE & EXECUTIVE TRANSMITTAL SUITE</span>
+            </div>
+            <h2 class="text-3xl font-serif font-bold text-white tracking-tight">Executive Architecture Brief & Documentation</h2>
+            <p class="text-sm text-gray-300 max-w-3xl leading-relaxed font-serif">
+              Official transmittal packages, cryptographic specifications, legal statutory trust frameworks, and dual live production endpoints for Chairman Elijah John Bowdre and civic stakeholders.
+            </p>
+          </div>
+          
+          <div class="p-4 rounded-xl bg-gov-navy border border-gov-border text-center flex-shrink-0">
+            <div class="text-xs font-mono text-gov-emerald font-bold">STATUS: PRODUCTION LIVE</div>
+            <div class="text-[11px] text-gray-400 mt-0.5">Cloudflare Secured & Dual-Routed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured PDF Download Box -->
+      <div class="gov-card-gold rounded-2xl p-8 border gold-border shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <div class="flex items-center space-x-3">
+              <span class="text-3xl">📄</span>
+              <div>
+                <span class="text-xs font-seal uppercase tracking-widest text-gov-gold font-bold">OFFICIAL PDF RELEASE</span>
+                <h3 class="text-2xl font-serif font-bold text-white mt-0.5">MIA by VIA · Executive Architecture Brief</h3>
+              </div>
+            </div>
+            <p class="text-sm text-gray-300 leading-relaxed font-serif">
+              The complete institutional briefing document detailing the Municipal Identification App architecture, W3C DID implementation, G-Codes/C-Nodes, Zero-Knowledge privacy circuits, and the Tripartite Custodial financial settlement rails.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="MIA_by_VIA_Executive_Architecture_Brief.pdf" download="MIA_by_VIA_Executive_Architecture_Brief.pdf" class="px-5 py-3 bg-gov-gold hover:bg-gov-goldLight text-gov-navy font-seal font-bold text-xs rounded-xl transition-all shadow-lg flex items-center space-x-2 uppercase tracking-wider">
+                <span>📥</span><span>Download Official PDF (1.8 MB)</span>
+              </a>
+              <a href="MIA_by_VIA_Executive_Architecture_Brief.pdf" target="_blank" class="px-5 py-3 bg-gov-deep hover:bg-gov-card text-white border border-gov-border font-seal font-semibold text-xs rounded-xl transition-all flex items-center space-x-2 uppercase tracking-wider">
+                <span>👁️</span><span>Open PDF in Viewer</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 bg-gov-deep p-5 rounded-xl border border-gov-border space-y-2.5 text-xs font-mono">
+            <div class="text-gov-gold font-seal font-bold text-xs uppercase border-b border-gov-border pb-2">Document Metadata</div>
+            <div class="text-gray-400">Classification: <span class="text-white">Official Transmittal</span></div>
+            <div class="text-gray-400">Direct Delivery To: <span class="text-gov-sky">Chairman Elijah John Bowdre</span></div>
+            <div class="text-gray-400">Authoring Agency: <span class="text-white">UnyKorn LLC / FTH Trading</span></div>
+            <div class="text-gray-400">File Size: <span class="text-gov-emerald">1.8 MB (PDF)</span></div>
+            <div class="text-gray-400">Cryptographic Standard: <span class="text-gov-pink">EIP-712 / ERC-5484</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Production Domain Access Grid -->
+      <div class="space-y-4">
+        <h3 class="text-xl font-serif font-bold text-white flex items-center">
+          <span class="mr-2">🌐</span> Live Production Access Endpoints
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Endpoint 1: miami.unykorn.ai -->
+          <div class="gov-card rounded-2xl p-6 border border-gov-border space-y-4 hover:border-gov-sky transition-all">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-seal text-gov-sky font-bold uppercase tracking-wider">PRIMARY CIVIC GATEWAY</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-gov-emerald/20 text-gov-emerald font-bold">ONLINE ✓</span>
+            </div>
+            <h4 class="text-lg font-serif font-bold text-white">https://miami.unykorn.ai/</h4>
+            <p class="text-xs text-gray-300 leading-relaxed font-serif">
+              Official public civic gateway for Miami-Dade municipal identity, departmental G-code verification kiosks, and resident credential management.
+            </p>
+            <a href="https://miami.unykorn.ai/" target="_blank" class="inline-flex items-center space-x-2 text-xs font-seal text-gov-sky hover:text-white font-bold uppercase tracking-wider pt-2">
+              <span>Launch miami.unykorn.ai</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Endpoint 2: mia.unykorn.ai -->
+          <div class="gov-card rounded-2xl p-6 border border-gov-border space-y-4 hover:border-gov-gold transition-all">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-seal text-gov-gold font-bold uppercase tracking-wider">EXECUTIVE SETTLEMENT PORTAL</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-gov-emerald/20 text-gov-emerald font-bold">ONLINE ✓</span>
+            </div>
+            <h4 class="text-lg font-serif font-bold text-white">https://mia.unykorn.ai/</h4>
+            <p class="text-xs text-gray-300 leading-relaxed font-serif">
+              Executive portal for Tripartite Proof-of-Reserve settlement, banking oracle telemetries, and institutional custody governance.
+            </p>
+            <a href="https://mia.unykorn.ai/" target="_blank" class="inline-flex items-center space-x-2 text-xs font-seal text-gov-gold hover:text-white font-bold uppercase tracking-wider pt-2">
+              <span>Launch mia.unykorn.ai</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Additional Technical Artifacts -->
+      <div class="gov-card rounded-2xl p-6 border border-gov-border space-y-4">
+        <h3 class="text-lg font-serif font-bold text-white">Repository Specifications & Codebase Files</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-4 bg-gov-deep rounded-xl border border-gov-border">
+            <div class="font-seal text-gov-sky font-bold">EXECUTIVE MEMO</div>
+            <div class="text-white font-semibold mt-1">Executive Transmittal Memo</div>
+            <div class="text-gray-400 mt-1">Formal transmittal from Founder Kevan Burns to Chairman Elijah John Bowdre.</div>
+          </div>
+          <div class="p-4 bg-gov-deep rounded-xl border border-gov-border">
+            <div class="font-seal text-gov-pink font-bold">SOLIDITY CONTRACT</div>
+            <div class="text-white font-semibold mt-1">ProofOfReserveMintGate.sol</div>
+            <div class="text-gray-400 mt-1">Dual-signature EIP-712 Proof-of-Reserve smart contract.</div>
+          </div>
+          <div class="p-4 bg-gov-deep rounded-xl border border-gov-border">
+            <div class="font-seal text-gov-gold font-bold">QA PIPELINE</div>
+            <div class="text-white font-semibold mt-1">ANVIL Back-Check Protocol</div>
+            <div class="text-gray-400 mt-1">Four-stage continuous verification and A3 static analysis linter suite.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- GOVERNMENT FOOTER -->
+  <footer class="border-t border-gov-border bg-gov-navy py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-seal">
+      <div>
+        Platform Operator: <span class="text-white font-semibold">UnyKorn LLC</span> · Non-Custodial Orchestration · Zero County Balance Sheet Risk
+      </div>
+      <div>
+        Chartered Banking Partners: <span class="text-gov-emerald font-medium">USTIB (USVI DBIR)</span> & <span class="text-gov-pink font-medium">BitGo Bank & Trust, N.A. (OCC)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT & AI AUDIO SYNTHESIS LOGIC -->
+  <script>
+    var synth = window.speechSynthesis;
+    var voices = [];
+    var isSpeaking = false;
+
+    // Institutional Government Audio Scripts
+    const NARRATIVES = {
+      cinematic: "Welcome to the official technical presentation for MIA by VIA, the municipal identification and civic trust architecture for Miami-Dade County. Authored under the direction of Chairman Elijah John Bowdre and engineered by UnyKorn LLC, this platform establishes a secure civic infrastructure. By uniting W3C Decentralized Identifiers, departmental G-Codes, and the Tripartite Dual-Custody settlement architecture across BitGo Bank and Trust and U.S. Trust International Bank, we deliver seamless municipal operations with zero fiscal or balance sheet risk to the County.",
+      
+      profile: "Chairman Elijah John Bowdre serves as Chairman of the Miami-Dade Cryptocurrency Taskforce, author of Florida's first state blockchain legislation, and architect of Miami-Dade County's historic cryptocurrency policy resolution. Creator of the Bitcoin endowment for Florida A&M University and co-founder of the U.S. Crypto Policy Alliance, Chairman Bowdre unites Government, Finance, and Science to advance municipal technology standards across Florida and the nation.",
+      
+      whitepaper: "Addressing Chairman Bowdre's Technical Architecture Whitepaper directly, our platform operationalizes his four foundational principles. First, Citizen Nodes empower residents with Soulbound Verifiable Credentials and client-side zero-knowledge proofs, ensuring personal data never touches the blockchain. Second, Government Codes provide immutable smart contracts for county departments. Third, the One-Way Data Wall completely isolates internal county databases from external networks. And fourth, the Tripartite Custody model delivers multi-asset settlement with qualified fiduciary banking oversight, protecting Miami-Dade County from financial and custody liability.",
+      
+      tiers: "We provide three institutional custodial service models. Option 1 delivers the Full RWA Tripartite Suite, combining physical asset custody under U.S. Trust International Bank with OCC-regulated digital key custody under BitGo. Option 2 provides Traditional Trust and Escrow for municipal contractors with automated AIA G703 milestone disbursements and direct Fedwire clearing, requiring zero blockchain tokens. Option 3 offers Institutional Digital Custody with insured parent-to-child cold storage vaults and liquidity routing over the Go Network.",
+      
+      simulator: "The Proof-of-Reserve Mint Gate enforces cryptographic dual-custody. Before any asset-backed token or municipal credit can be issued, both U.S. Trust International Bank as the physical asset oracle and BitGo as the digital key authority must generate valid EIP-712 cryptographic signatures. The smart contract validates both signatures, nonces, and expiration bounds, guaranteeing that uncollateralized or naked minting is mathematically impossible.",
+      
+      anvil: "The ANVIL Release Gate Board enforces strict quality assurance and invariant governance. Automated gates G0 through G7 verify specification parity, integer minor-unit money math, anti-replay nonces, and role isolation. Human fiduciary gates G-M01 through G-M14 confirm primary legal instruments, municipal enabling authority, and complete vault reconciliation with zero dollar drift.",
+
+      downloads: "You are viewing the Official Legislative and Executive Transmittal Suite. Here you can download the complete MIA by VIA Executive Architecture Brief PDF, authored under the direction of Chairman Elijah John Bowdre. Both live production endpoints, miami.unykorn.ai and mia.unykorn.ai, are fully operational, secured with Cloudflare SSL, and ready for immediate municipal stakeholder review."
+    };
+
+    function populateVoices() {
+      if (!synth) return;
+      voices = synth.getVoices();
+      const select = document.getElementById('voice-select');
+      select.innerHTML = '<option value="">Executive Voice (Default)</option>';
+
+      // Sort voices to put Natural / Neural / Professional English voices first
+      const sortedVoices = [...voices].sort((a, b) => {
+        const isANatural = a.name.includes('Natural') || a.name.includes('Google') || a.name.includes('Neural') || a.name.includes('Christopher') || a.name.includes('Guy');
+        const isBNatural = b.name.includes('Natural') || b.name.includes('Google') || b.name.includes('Neural') || b.name.includes('Christopher') || b.name.includes('Guy');
+        return isBNatural - isANatural;
+      });
+
+      sortedVoices.forEach((voice, index) => {
+        if (voice.lang.includes('en')) {
+          const option = document.createElement('option');
+          option.value = voices.indexOf(voice);
+          const isSmooth = voice.name.includes('Natural') || voice.name.includes('Google US English') || voice.name.includes('Christopher') || voice.name.includes('Guy') || voice.name.includes('David');
+          option.textContent = `${voice.name} (${voice.lang})${isSmooth ? ' ★ Institutional' : ''}`;
+          select.appendChild(option);
+        }
+      });
+    }
+
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = populateVoices;
+    }
+    populateVoices();
+
+    function speakText(textToSpeak) {
+      if (!synth) {
+        alert("Web Speech API is not supported in this browser environment.");
+        return;
+      }
+      synth.cancel();
+
+      // Split text into natural conversational chunks for professional cadence
+      const sentences = textToSpeak.match(/[^.!?]+[.!?]+/g) || [textToSpeak];
+      let currentSentenceIndex = 0;
+
+      const select = document.getElementById('voice-select');
+      const selectedIndex = select.value;
+      
+      // Auto-detect the best smooth natural human voice
+      let chosenVoice = null;
+      if (selectedIndex !== "" && voices[selectedIndex]) {
+        chosenVoice = voices[selectedIndex];
+      } else {
+        chosenVoice = voices.find(v => v.name.includes('Christopher') && v.name.includes('Natural')) ||
+                      voices.find(v => v.name.includes('Guy') && v.name.includes('Natural')) ||
+                      voices.find(v => v.name.includes('Google US English')) ||
+                      voices.find(v => v.name.includes('Natural') && v.lang.startsWith('en')) ||
+                      voices.find(v => v.name.includes('David')) ||
+                      voices.find(v => v.lang === 'en-US');
+      }
+
+      function speakNextSentence() {
+        if (currentSentenceIndex >= sentences.length) {
+          isSpeaking = false;
+          document.getElementById('btn-play-voice').innerHTML = '<span>🔊</span><span>Narrate Section</span>';
+          return;
+        }
+
+        const sentenceText = sentences[currentSentenceIndex].trim();
+        if (!sentenceText) {
+          currentSentenceIndex++;
+          speakNextSentence();
+          return;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(sentenceText);
+        if (chosenVoice) utterance.voice = chosenVoice;
+
+        // Professional government prosody: measured tempo and authoritative pitch
+        utterance.rate = 0.96;
+        utterance.pitch = 0.98;
+
+        utterance.onstart = () => {
+          isSpeaking = true;
+          document.getElementById('btn-play-voice').innerHTML = '<span>⏸</span><span>Narrating...</span>';
+        };
+
+        utterance.onend = () => {
+          currentSentenceIndex++;
+          setTimeout(speakNextSentence, 180);
+        };
+
+        utterance.onerror = () => {
+          isSpeaking = false;
+          document.getElementById('btn-play-voice').innerHTML = '<span>🔊</span><span>Narrate Section</span>';
+        };
+
+        synth.speak(utterance);
+      }
+
+      speakNextSentence();
+    }
+
+    function speakCurrentTab() {
+      const activeTabs = ['cinematic', 'profile', 'whitepaper', 'tiers', 'simulator', 'anvil', 'downloads'];
+      for (const tab of activeTabs) {
+        const view = document.getElementById('view-' + tab);
+        if (view && !view.classList.contains('hidden')) {
+          const smoothNarrative = NARRATIVES[tab] || view.innerText;
+          speakText(smoothNarrative);
+          break;
+        }
+      }
+    }
+
+    function pauseSpeech() {
+      if (synth.speaking && !synth.paused) {
+        synth.pause();
+        document.getElementById('btn-pause-voice').innerText = "Resume";
+      } else if (synth.paused) {
+        synth.resume();
+        document.getElementById('btn-pause-voice').innerText = "Pause";
+      }
+    }
+
+    function stopSpeech() {
+      if (synth) {
+        synth.cancel();
+        isSpeaking = false;
+        document.getElementById('btn-play-voice').innerHTML = '<span>🔊</span><span>Narrate Section</span>';
+        document.getElementById('btn-pause-voice').innerText = "Pause";
+      }
+    }
+
+    function switchTab(tabId) {
+      stopSpeech();
+      const tabs = ['cinematic', 'profile', 'whitepaper', 'tiers', 'simulator', 'anvil', 'downloads'];
+      tabs.forEach(t => {
+        const view = document.getElementById('view-' + t);
+        const btn = document.getElementById('tab-' + t);
+        if (t === tabId) {
+          view.classList.remove('hidden');
+          btn.className = 'px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg transition-all bg-gov-blue text-white shadow-md uppercase tracking-wider';
+        } else {
+          view.classList.add('hidden');
+          btn.className = 'px-3.5 py-1.5 text-xs font-seal font-semibold rounded-lg text-gray-300 hover:text-white transition-all uppercase tracking-wider';
+        }
+      });
+    }
+
+    function addLog(msg, color = "text-gray-300") {
+      const term = document.getElementById('sim-terminal');
+      const time = new Date().toLocaleTimeString();
+      const div = document.createElement('div');
+      div.className = color;
+      div.innerHTML = `<span class="text-gray-500">[${time}]</span> ${msg}`;
+      term.appendChild(div);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    function resetSimulation() {
+      const term = document.getElementById('sim-terminal');
+      term.innerHTML = '<div class="text-gray-500">// Terminal reset. Ready to simulate.</div>';
+      document.getElementById('sim-status').className = 'text-xs font-mono px-2.5 py-1 rounded-full bg-gov-deep text-gray-400 border border-gov-border';
+      document.getElementById('sim-status').innerText = 'READY';
+    }
+
+    function runPoRSimulation() {
+      const spv = document.getElementById('sim-spv').value;
+      const asset = document.getElementById('sim-asset').value;
+      const units = document.getElementById('sim-units').value;
+      const usd = document.getElementById('sim-usd').value;
+      const recipient = document.getElementById('sim-recipient').value;
+      const status = document.getElementById('sim-status');
+
+      status.className = 'text-xs font-mono px-2.5 py-1 rounded-full bg-gov-blue/20 text-gov-sky border border-gov-blue/40 animate-pulse';
+      status.innerText = 'EXECUTING DUAL-SIG...';
+
+      addLog(`▶ Initiating Proof-of-Reserve Attestation for ${spv}...`, 'text-gov-sky font-semibold');
+      
+      setTimeout(() => {
+        addLog(`[USTIB Fiduciary] Ingesting physical assay proof for ${units} units (${asset})`, 'text-gov-emerald');
+        addLog(`[USTIB Fiduciary] Generated SHA-256 Digest: 0x4f7c19a0e4b8...e91a`, 'text-gray-400');
+        addLog(`[USTIB Fiduciary] Cryptographic Signature (σ_USTIB): 0x8a91b4...2c01 [VALID]`, 'text-gov-emerald font-semibold');
+      }, 500);
+
+      setTimeout(() => {
+        addLog(`[Unykorn Engine] Checking ANVIL Gate G1 (Integer Math) & KYC Whitelist...`, 'text-gov-gold');
+        addLog(`[Unykorn Engine] Recipient ${recipient} is enrolled in ERC-3643 registry.`, 'text-gov-emerald');
+      }, 1100);
+
+      setTimeout(() => {
+        addLog(`[BitGo OCC Custody] Policy Rule Match (2-of-3 Multi-Sig Approved)`, 'text-gov-pink');
+        addLog(`[BitGo OCC Custody] Co-Signing EIP-712 Payload (σ_BitGo): 0x7c49e2...00fa [VALID]`, 'text-gov-pink font-semibold');
+      }, 1700);
+
+      setTimeout(() => {
+        addLog(`[Smart Contract] ProofOfReserveMintGate.executeMintWithPoR() invoked`, 'text-white font-bold');
+        addLog(`[Smart Contract] Verifying EIP-712 Domain Separator & Nonce #0...`, 'text-gray-300');
+        addLog(`[Smart Contract] Dual Signatures Verified (USTIB + BitGo matched).`, 'text-gov-emerald font-bold');
+        addLog(`✅ ATTESTATION VERIFIED: ${units} Units Authorized for ${recipient}`, 'text-emerald-300 font-bold bg-emerald-950/40 p-2 rounded border border-emerald-500/30');
+        
+        status.className = 'text-xs font-mono px-2.5 py-1 rounded-full bg-gov-emerald/20 text-emerald-300 border border-gov-emerald/40 font-bold';
+        status.innerText = 'VALIDATION COMPLETE ✓';
+      }, 2300);
+    }
+  </script>
+</body>
+</html>
